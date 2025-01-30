@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  vault:
+    image: vault:1.13.0
+    container_name: vault
+    cap_add:
+      - IPC_LOCK
+    env_file:
+      - .env
+    ports:
+      - "8200:8200"
+    networks:
+      - todoapp_network
+    restart: unless-stopped
+    volumes:
+      - ./secrets.txt:/secrets.txt
+  postgres:
+    image: postgres:17.0
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    depends_on:
+      - vault
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    networks:
+      - todoapp_network
+    env_file:
+      - .env
+  keycloak:
+    image: keycloak/keycloak:26.0
+    container_name: keycloak
+    restart: always
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    depends_on:
+      - postgres
+    command:
+      - start
+    networks:
+      - todoapp_network
+    env_file:
+      - .env
+
+networks:
+  todoapp_network:
+    driver: bridge
+

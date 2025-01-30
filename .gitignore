@@ -1,0 +1,42 @@
+# Byte-compiled Python files
+*.py[cod]
+
+# Log files
+*.log
+
+# Virtualenv files
+.venv
+env
+venv
+
+# Flask-specific files
+instance/
+__pycache__/
+
+# IDE files
+# .vscode/
+# .pycharm/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+data/
+
+# Python package directories
+dist/
+build/
+egg-info/
+
+# Flask debug toolbar files
+.debug-toolbar
+
+# Static files (if you're using a CDN or external storage)
+static/
+
+# Database files (if you're using a local database)
+.db
+.sqlite
+
+# env and secrets files
+.env
+secrets.txt
