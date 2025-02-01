@@ -14,7 +14,9 @@ services:
       - todoapp_network
     restart: unless-stopped
     volumes:
-      - ./secrets.txt:/secrets.txt
+      - private-volume:/vault/file:rw
+      - ./vault:/vault/config:rw
+    entrypoint: vault server -config=/vault/config/vault.json
   postgres:
     image: postgres:17.0
     container_name: postgres
@@ -49,3 +51,10 @@ networks:
   todoapp_network:
     driver: bridge
 
+volumes:
+  private-volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./data
+      o: bind

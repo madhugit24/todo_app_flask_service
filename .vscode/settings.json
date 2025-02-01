@@ -1,0 +1,23 @@
+{
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    // "source.sortImports": "always",
+    "source.organizeImports": "always"
+    // "source.removeUnusedImports": "always"
+  },
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.open": "always"
+  // "terminal.integrated.env.windows": {
+  //   "PATH": "${workspaceFolder}/venv/Scripts:${env:PATH}"
+  // },
+  // "PYTHONPATH": "C:\\Users\\madhu\\Documents\\personal_projects\\todo_app_flask_service",
+  // "python.defaultInterpreterPath": "C:\\Users\\madhu\\Documents\\personal_projects\\venv\\Scripts\\python.exe"
+}
