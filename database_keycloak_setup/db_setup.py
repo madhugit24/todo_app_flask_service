@@ -5,6 +5,9 @@ from psycopg2 import sql
 
 class ConnectionManager:
     def __init__(self):
+        """
+        Connection Manager for Postgres
+        """
         self.connection = None
 
     def get_cursor(
@@ -41,6 +44,9 @@ class ConnectionManager:
 
 
 def create_user_and_database():
+    """
+    Creates a new user, assigns roles and creates database with ownership to app user on the Postgres server
+    """
     try:
         # Fetch environment variables
         postgres_admin_host = os.environ["POSTGRES_HOST"]
