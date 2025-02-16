@@ -20,7 +20,8 @@ __pycache__/
 # Miscellaneous
 .DS_Store
 Thumbs.db
-data/
+data_postgres/
+data_vault/
 
 # Python package directories
 dist/

@@ -26,7 +26,7 @@ services:
     depends_on:
       - vault
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./data_postgres:/var/lib/postgresql/data
     networks:
       - todoapp_network
     env_file:
@@ -56,5 +56,5 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: ./data
+      device: ./data_vault
       o: bind
